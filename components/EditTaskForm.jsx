@@ -1,33 +1,34 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function EditTaskForm({ id, title, description }) {
   const [newTitle, setNewTitle] = useState(title);
   const [newDescription, setNewDescription] = useState(description);
 
-  const router = useRouter();
+  // const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/${id}`, {
-        method: "PUT",
-        cache: "no-store",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({ newTitle, newDescription }),
-      });
-      if (!res.ok) {
-        throw new Error("Failed to Update Task");
-      }
-      router.refresh();
-      router.push("/");
-    } catch (error) {
-      console.log(error);
-    }
+    return;
+    // try {
+    //   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/${id}`, {
+    //     method: "PUT",
+    //     cache: "no-store",
+    //     headers: {
+    //       "Content-type": "application/json",
+    //     },
+    //     body: JSON.stringify({ newTitle, newDescription }),
+    //   });
+    //   if (!res.ok) {
+    //     throw new Error("Failed to Update Task");
+    //   }
+    //   router.refresh();
+    //   router.push("/");
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
 
   return (

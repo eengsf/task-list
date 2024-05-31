@@ -2,26 +2,26 @@ import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 
-const getTask = async () => {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api`, {
-      cache: "no-store",
-    });
-    if (!res.ok) {
-      throw new Error("Failed to fetch task");
-    }
-    return res.json();
-  } catch (error) {
-    console.log("Error Loading Task", error);
-  }
-};
+// const getTask = async () => {
+//   try {
+//     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api`, {
+//       cache: "no-store",
+//     });
+//     if (!res.ok) {
+//       throw new Error("Failed to fetch task");
+//     }
+//     return res.json();
+//   } catch (error) {
+//     console.log("Error Loading Task", error);
+//   }
+// };
 
 export default async function TaskList() {
-  const { tasks } = await getTask();
+  // const { tasks } = await getTask();
 
   return (
     <>
-      {tasks
+      {/* {tasks
         ? tasks.map((t) => (
             <div
               key={t._id}
@@ -38,7 +38,8 @@ export default async function TaskList() {
               </div>
             </div>
           ))
-        : null}
+        : null} */}
+      <h1>fuad</h1>
     </>
   );
 }

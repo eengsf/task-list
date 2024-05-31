@@ -6,19 +6,20 @@ export default function RemoveBtn({ id }) {
   const router = useRouter();
 
   const removeTask = async () => {
-    const confirmed = confirm("Are you sure?");
-    if (confirmed) {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/?id=${id}`,
-        {
-          method: "DELETE",
-          cache: "no-store",
-        }
-      );
-      if (res.ok) {
-        router.refresh();
-      }
-    }
+    // const confirmed = confirm("Are you sure?");
+    // if (confirmed) {
+    //   const res = await fetch(
+    //     `${process.env.NEXT_PUBLIC_API_URL}/api/?id=${id}`,
+    //     {
+    //       method: "DELETE",
+    //       cache: "no-store",
+    //     }
+    //   );
+    //   if (res.ok) {
+    //     router.refresh();
+    //   }
+    // }
+    return;
   };
   return (
     <>
