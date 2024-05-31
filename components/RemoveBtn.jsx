@@ -12,7 +12,9 @@ export default function RemoveBtn({ id }) {
         `${process.env.NEXT_PUBLIC_API_URL}/api/?id=${id}`,
         {
           method: "DELETE",
-          cache: "no-store",
+          headers: {
+            "Chache-Control": "no-store",
+          },
         }
       );
       if (res.ok) {
