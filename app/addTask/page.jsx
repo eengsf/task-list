@@ -16,25 +16,24 @@ export default function addTask() {
       alert("Title and description are required");
       return;
     }
-    return;
-    // try {
-    //   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api`, {
-    //     method: "POST",
-    //     cache: "no-store",
-    //     headers: {
-    //       "Content-type": "application/json",
-    //     },
-    //     body: JSON.stringify({ title, description }),
-    //   });
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api`, {
+        method: "POST",
+        cache: "no-store",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ title, description }),
+      });
 
-    //   if (res.ok) {
-    //     router.push("/");
-    //   } else {
-    //     throw new Error("Failed to craete a task");
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    // }
+      if (res.ok) {
+        router.push("/");
+      } else {
+        throw new Error("Failed to craete a task");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
